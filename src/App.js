@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Cabecera from './components/Cabecera';
 import Listado from './components/Listado';
 
 // El componente App es el padre de:
@@ -10,15 +11,15 @@ import Listado from './components/Listado';
 // PROPS: App deberá pasar por props lo necesario a sus componenetes internos.
 
 function App() {
-  const [itemsCount, setItemsCount] = useState();
+  const [itemsCount, setItemsCount] = useState(0);
 
   function onAddItemToCart() {
-    console.log('add item clicked');
+    setItemsCount((prevState) => prevState + 1);
   }
 
   return (
     <div className="App">
-      {/* <Cabecera /> */}
+      <Cabecera itemsCount={itemsCount} />
       <Listado onAddItemToCart={onAddItemToCart} />
     </div>
   );

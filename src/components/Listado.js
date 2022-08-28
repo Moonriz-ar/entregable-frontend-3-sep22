@@ -11,7 +11,6 @@ import products from './data.json';
 // PROPS: Listado recibe el método para aumentar el estado de App y se lo pasa a cada uno de sus hijos.
 
 export default function Listado({ onAddItemToCart }) {
-  console.log(products);
   return (
     <div className="container">
       {products.map((item) => (
