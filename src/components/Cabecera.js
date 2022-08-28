@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // El componente Cabera no tiene componentes hijos.
 // ESTADO: Cabecera no tiene estado.
@@ -18,3 +19,11 @@ export default function Cabecera({ itemsCount }) {
     </header>
   );
 }
+
+Cabecera.propTypes = {
+  itemsCount: PropTypes.number,
+};
+
+Cabecera.defaultProps = {
+  itemsCount: 0,
+};

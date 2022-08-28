@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // El componente Item no tiene componentes hijos.
 // ESTADO: Item debe tener un número para almacenar la cantidad de stock, la misma se la defina el padre a la hora de crearlo.
@@ -36,3 +37,18 @@ export default function Item({
     </div>
   );
 }
+
+Item.propTypes = {
+  description: PropTypes.string,
+  name: PropTypes.string,
+  onAddItemToCart: PropTypes.func,
+  initialStock: PropTypes.number,
+};
+
+Item.defaultProps = {
+  description:
+    'Suma más y más kilómetros con tus Zapatillas Nike Revolution 6 Next Nature, que aportan amortiguación y confort a cada paso que des. Su capellada transpirable y suela diseñada por computadora para una mejor tracción son ideales hasta para los corredores más exigentes.',
+  name: 'Zapatillas Nike Revolution 6 Next Nature',
+  onAddItemToCart: () => {},
+  initialStock: 5,
+};

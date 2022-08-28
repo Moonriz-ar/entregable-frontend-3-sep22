@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Item from './Item';
 import products from './data.json';
@@ -25,3 +26,11 @@ export default function Listado({ onAddItemToCart }) {
     </div>
   );
 }
+
+Listado.propTypes = {
+  onAddItemToCart: PropTypes.func,
+};
+
+Listado.defaultProps = {
+  onAddItemToCart: () => {},
+};
